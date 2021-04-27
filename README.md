@@ -1,8 +1,8 @@
 
 {
-  "prefix": "!",
+  "prefix": "/",
   "sahip": "572038270746099746",
-  "token": "ODM0MDU1NjM0OTkwMTM3Mzk1.YH7U1w.WmiD0lEA2l8sYNMa3IlGWPwcTC4"
+  "token": "ODM0MDU1NjM0OTkwMTM3Mzk1.YH7U1w.s21l3SYCrE9rsd_aw6ZzRWkKSEw"
 }
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -37,7 +37,7 @@ const log = message => {
 ////////////// ALTI ELLEME
 require("./util/eventLoader")(client);
 
-client.login(ayarlar.token);
+client.login(834055634990137395);
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -92,8 +92,8 @@ client.load = command => {
 client.unload = command => {
   return new Promise((resolve, reject) => {
     try {
-      delete require.cache[require.resolve(`./komutlar/${command}`)];
-      let cmd = require(`./komutlar/${command}`);
+      delete require.cache[require.resolve(`./bannedage/${play}`)];
+      let cmd = require(`./ertulold/${selam}`);
       client.commands.delete(command);
       client.aliases.forEach((cmd, alias) => {
         if (cmd === command) client.aliases.delete(alias);
@@ -129,7 +129,7 @@ client.on("error", e => {
   console.log(chalk.bgRed(e.replace(regToken, "that was redacted")));
 });
 
-client.login(ayarlar.token);
+client.login(834055634990137395);
 {
   "name": "guidebot",
   "version": "2.0.3",
@@ -194,12 +194,12 @@ const ayarlar = require("../ayarlar.json");
 
 var prefix = ayarlar.prefix;
 
-module.exports = client => {
+module.exports = client => {834055634990137395
   console.log(`[${moment().format("YYYY-MM-DD HH:mm:ss")}]`);
   console.log(`• BIGGZ ALTYAPI Başlatılıyor...`);
   console.log(`• Komutlar Başarıyla Yüklendi!`);
   console.log(`• Discorda Başarıyla Bağlandı!`);
-  client.user.setStatus("online"); /// ("") kısmı (online - dnd - idle) gibi değiştirilebilir.
+  client.user.setStatus("idle"); /// ("") kısmı (online - dnd - idle) gibi değiştirilebilir.
   client.user.setActivity("(Call of Duty oynuyor", { type: "PLAYİNG"}); //// type kısmı (WATCHING - PLAYING - LISTENING) gibi değiştirilebilir.
   console.log(`• Oynuyor Başarıyla Ayarlandı!`);
   console.log(
